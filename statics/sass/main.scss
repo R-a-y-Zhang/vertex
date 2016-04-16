@@ -1,0 +1,156 @@
+$header_bg: #FF5733;
+$divider: #DAF7A6;
+$border_1: #DAF7A6;
+$main_bg: #C70039;
+$main_bg2: #FF5733;
+$ff1: 'Arapey';
+
+@mixin displayflex($flow) {
+	display: flex;
+	flex-flow: $flow;
+} 
+
+@mixin bg($color) {
+	background: $color;
+	background-color: $color;
+}
+
+@mixin dims($w, $h) {
+	width: $w;
+	height: $h;
+}
+
+@mixin margins($l, $t, $r, $b) {
+	margin-left: $l;
+	margin-top: $t;
+	margin-right: $r;
+	margin-bottom: $b;
+}
+
+/* it starts now! */
+
+body,html {
+	@include dims(99%, 99%);
+	@include displayflex(column);
+	justify-content: center;
+	@include bg($main_bg);
+}
+
+body {
+	margin: 10px;
+}
+
+#header {
+	@include displayflex(column);
+	@include bg($header_bg);
+	border-radius: 100px;
+	padding: 5px;
+
+	#header-bar {
+		@include displayflex(row);
+		align-items: center;
+	}
+}
+
+.icon {
+	@include dims(20px, 20px);
+	@include bg(white);
+	border-radius: 100px;
+	padding: 5px;
+	margin: 5px;
+}
+
+.icon:hover {
+	cursor: pointer;
+	@include bg(#9e7bb7);
+} 
+.header-bar-sep {
+	border-right: 1px solid $border_1;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.header-btn {
+	border: 1px solid white;
+	border-radius: 100px;
+	padding: 5px;
+	@include dims(20px, 20px);
+	margin: 5px;
+	@include bg(white);
+
+	p {
+		font-family: $ff1;
+		font-size: 15px;
+		font-weight: bold;
+		font-style: italic;
+		text-align: center;
+		vertical-align: center;
+		margin: auto;
+	}
+}
+
+.header-btn:hover {
+	cursor:pointer;
+	@include bg(#9e7bb7);
+	border: 1px solid #9e7bb7;
+}
+
+/* body */
+
+#main {
+	@include displayflex(row);
+	flex-grow: 1;
+	margin-top: 20px;
+}
+
+#tree {
+	@include displayflex(column);
+	width: 200px;
+	border-radius: 10px;
+}
+
+#blueprint {
+	flex-grow: 5;
+	border-radius: 10px;
+	@include bg($main_bg2);
+	border: 1px solid black;
+	z-index: 0;
+
+	canvas {
+		border-radius: 10px;
+		z-index: 1;
+	}
+}
+
+.main-sep {
+	border-right: 1px solid $divider;
+	height: 90%;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+#canvas {
+	@include bg(white);
+}
+
+/* tree */
+
+#file-tree {
+	flex-grow: 1;
+	@include bg($main_bg2);
+	border-radius: 10px;
+}
+
+#file-ast {
+	flex-grow: 2;
+	@include bg($main_bg2);
+	border-radius: 10px;
+}
+
+.tree-sep {
+	border-top: 1px solid $divider;
+	width: 90%;
+	@include margins(auto, 5px, auto, 5px);
+}

@@ -1,0 +1,50 @@
+body, html {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  display: flex;
+  flex-flow: column;
+  width: 99%;
+  height: 99%;
+  justify-content: center; }
+
+body {
+  background: #F66613; }
+
+#header {
+  margin-left: 20px; }
+
+#content {
+  margin-right: auto;
+  margin-left: auto; }
+
+#fields {
+  display: flex;
+  flex-flow: row; }
+  #fields .fields-container {
+    margin: 10px; }
+  #fields input {
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    border: 1px solid grey;
+    border-radius: 200px;
+    padding: 5px;
+    padding-left: 10px;
+    width: 175px;
+    outline: 0; }
+
+#footer {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 10px; }
+  #footer p {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    border: 1px solid #F69413;
+    border-radius: 100px;
+    background-color: #F69413;
+    background: #F69413; }
+  #footer #confirm-div:hover {
+    cursor: pointer;
+    background: #FFBF00; }
+
+/*# sourceMappingURL=variable_create.css.map */

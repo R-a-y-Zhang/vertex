@@ -1,0 +1,22 @@
+#nodeMenu {
+  display: flex;
+  flex-flow: column;
+  border: 1px solid black;
+  border-bottom: 0px; }
+  #nodeMenu .insertNodeMenu-item {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 200px;
+    height: 25px;
+    border-bottom: 1px solid black;
+    padding-left: 10px;
+    background: white;
+    background-color: white;
+    margin: 0px; }
+  #nodeMenu .insertNodeMenu-item:hover {
+    cursor: pointer;
+    background: #848484;
+    background-color: #848484; }
+
+/*# sourceMappingURL=menus.css.map */

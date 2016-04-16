@@ -1,0 +1,13 @@
+TODOs
+------------------------------------------------------------
+- Create popups for all vertexes
+- Devise method to pass data from vertex popup to main
+	window and make call to create vertex (likely will use
+	a custom emitter)
+
+Issues
+------------------------------------------------------------
+- Vertex popup 'blur' event not emitting when switching out
+	of window
+
+- Weird behavior on full screen

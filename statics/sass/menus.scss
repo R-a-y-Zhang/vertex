@@ -1,0 +1,32 @@
+$items-bg: white;
+$items-bg-hover: #848484;
+
+@mixin bg ($color) {
+	background: $color;
+	background-color: $color;
+}
+
+#nodeMenu {
+	display: flex;
+	flex-flow: column;
+	border: 1px solid black;
+	border-bottom: 0px;
+	
+
+	.insertNodeMenu-item {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		width: 200px;
+		height: 25px;
+		border-bottom: 1px solid black;
+		padding-left: 10px;
+		@include bg($items-bg);
+		margin: 0px;
+	}
+
+	.insertNodeMenu-item:hover {
+		cursor: pointer;
+		@include bg($items-bg-hover);
+	}
+}
