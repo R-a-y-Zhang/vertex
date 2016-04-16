@@ -8,7 +8,9 @@ $(document).ready(function () {
 		console.log("blurred");
 	}); */
 
-	$(window).beforeunload(function () {
-		params = { name: $('#var-name').val(), initVal: $('#var-init').val() };
+	$(window).on('beforeunload', function () {
+		console.log("trigger");
+		$(this).trigger('test');
+		params = { type: 'var', name: $('#var-name').val(), initVal: $('#var-init').val() };
 	});
 });
