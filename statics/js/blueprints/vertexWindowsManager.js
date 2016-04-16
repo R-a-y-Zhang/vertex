@@ -5,7 +5,7 @@ var gui = window.require('nw.gui');
 var HTMLS_PG = '~/Documents/vertex/htmls/node-creation-windows/';
 
 var var_html = "<div id='popup-window-div-body'> \
-	<div id='header'> \
+	<div id='var-header' class='popup-header'> \
 		Create variable \
 	</div> \
 	<div id='popup-content'> \
