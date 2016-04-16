@@ -1,13 +1,6 @@
 TODOs
-------------------------------------------------------------
-- Create popups for all vertexes
-- Devise method to pass data from vertex popup to main
-	window and make call to create vertex (likely will use
-	a custom emitter)
-
-Issues
-------------------------------------------------------------
-- Vertex popup 'blur' event not emitting when switching out
-	of window
-
-- Weird behavior on full screen
+-------------------------------------------------------------------
+* Create "Variable Creation Window" (and as many other ones as possible)
+* Successfully insert variable into blueprint and change the
+	vertex information accordingly
+* Create JSON specification

@@ -1,15 +1,7 @@
 $colorbg: #F66613;
 $color1: #F69413;
-$color2: #FFBF00;
 
 $font-stack: 'Source Sans Pro', Helvetica, sans-serif;
-
-@mixin paddings($l, $t, $r, $b) {
-	padding-left: $l;
-	padding-top: $t;
-	padding-right: $r;
-	padding-bottom: $b;
-}
 
 body, html {
 	font-family: $font-stack;
@@ -58,15 +50,12 @@ body {
 	margin-right: 10px;
 
 	p {
-		@include paddings(10px, 5px, 10px, 5px);
+		padding: 20px;
+		padding-top: 5px;
+		padding-bottom: 5px;
 		border: 1px solid $color1;
 		border-radius: 100px;
 		background-color: $color1;
 		background: $color1;
-	}
-
-	#confirm-div:hover {
-		cursor: pointer;
-		background: $color2;
 	}
 }
