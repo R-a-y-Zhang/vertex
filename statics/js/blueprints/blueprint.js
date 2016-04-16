@@ -62,3 +62,21 @@ joint.shapes.devs.Code = joint.shapes.basic.Generic.extend(_.extend({}, joint.sh
         return attrs;
     }
 }));
+
+//basic adjustments to be made to every codeblock
+function basicAdjustments(codeblock) {
+    codeblock.attr('[port="procIn"]/fill', 'black');
+    codeblock.attr('[port="procOut"]/fill', 'black');
+}
+
+function blueprintVariable(x, y, name, value) {
+    return new joint.shapes.devs.Code({
+        position: { x: x, y: y },
+        size: { width: 300, height: 50 },
+        inPorts: ['procIn', 'assignment'],
+        outPorts: ['procOut', 'usage'],
+        attrs: {
+            '.label': { text: name, 'ref-x': .5, 'ref-y': .5 }
+        }
+    });
+}
