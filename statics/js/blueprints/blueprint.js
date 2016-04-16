@@ -24,7 +24,7 @@ joint.shapes.devs.Code = joint.shapes.basic.Generic.extend(_.extend({}, joint.sh
             },
             '.inPorts circle': { fill: '#16A085', magnet: 'passive', type: 'input' },
             '.outPorts circle': { fill: '#E74C3C', type: 'output' },
-            rect: { fill: '#ffffff' },
+            rect: { fill: '#ffffff', rx: 0, ry: 0 },
             text: {
                 'pointer-events': 'none'
             },
@@ -87,9 +87,18 @@ function blueprintVariable(x, y, name, value) {
 }
 
 function blueprintIf(x, y) {
-    return blueprintBasic(x, y, 'if', ['condition'], ['true', 'else']);
+    var out = blueprintBasic(x, y, 'if', ['condition'], ['true', 'else']);
+    out.attr('[port="true"]/fill', 'black');
+    out.attr('[port="else"]/fill', 'black');
+    return out;
 }
 
 function blueprintWhile(x, y) {
-    return blueprintBasic(x, y, 'while', ['condition'], ['true']);
+    var out = blueprintBasic(x, y, 'while', ['condition'], ['true']);
+    out.attr('[port="true"]/fill', 'black');
+    return out;
+}
+
+function blueprintFor(x, y) {
+    return blueprintBasic(x, y, 'for', ['collection'], ['each']);
 }
