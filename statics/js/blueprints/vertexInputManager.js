@@ -9,10 +9,16 @@ $(document).ready (function () {
 		var attrId = $(this).attr('id');
 		switch(attrId) {
 			case 'variable':
- 				var var_win = popups.variable();
-				var_win.emit('
+				var data = popups.var_html;
+				console.log(data);
+				$('#blueprint').append(data);
+				$('#popup-window-div-body').css({
+					width: '400px',
+					height: '200px',
+					position: 'absolute'
+				});
 				break;
-		}
+ 		}
 	});
 });
 

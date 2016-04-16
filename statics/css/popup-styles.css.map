@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,sBAAuB;EACtB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,MAAM;EACjB,eAAe,EAAE,MAAM;EACvB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;;AAGd,cAAe;EACd,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,GAAG;EACd,eAAe,EAAE,MAAM",
+"sources": ["../sass/popup-styles.scss"],
+"names": [],
+"file": "popup-styles.css"
+}
