@@ -18,13 +18,13 @@ joint.shapes.devs.Code = joint.shapes.basic.Generic.extend(_.extend({}, joint.sh
                 stroke: '#000000'
             },
             '.port-body': {
-                r: 8,
+                r: 4,
                 magnet: true,
                 stroke: '#000000'
             },
             '.inPorts circle': { fill: '#16A085', magnet: 'passive', type: 'input' },
             '.outPorts circle': { fill: '#E74C3C', type: 'output' },
-            rect: { fill: '#ffffff', rx: 20, ry: 48 },
+            rect: { fill: '#ffffff' },
             text: {
                 'pointer-events': 'none'
             },
@@ -67,10 +67,11 @@ joint.shapes.devs.Code = joint.shapes.basic.Generic.extend(_.extend({}, joint.sh
 function basicAdjustments(codeblock) {
     codeblock.attr('[port="procIn"]/fill', 'black');
     codeblock.attr('[port="procOut"]/fill', 'black');
+    return codeblock;
 }
 
 function blueprintVariable(x, y, name, value) {
-    return new joint.shapes.devs.Code({
+    return basicAdjustments(new joint.shapes.devs.Code({
         position: { x: x, y: y },
         size: { width: 300, height: 50 },
         inPorts: ['procIn', 'assignment'],
@@ -78,5 +79,5 @@ function blueprintVariable(x, y, name, value) {
         attrs: {
             '.label': { text: name, 'ref-x': .5, 'ref-y': .5 }
         }
-    });
+    }));
 }
