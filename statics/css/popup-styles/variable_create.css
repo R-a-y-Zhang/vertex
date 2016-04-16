@@ -42,5 +42,8 @@ body {
     border-radius: 100px;
     background-color: #F69413;
     background: #F69413; }
+  #footer .btn-div:hover {
+    cursor: pointer;
+    background: #ff9900; }
 
 /*# sourceMappingURL=variable_create.css.map */

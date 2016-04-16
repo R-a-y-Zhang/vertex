@@ -1,5 +1,6 @@
 $colorbg: #F66613;
 $color1: #F69413;
+$color2: #ff9900;
 
 $font-stack: 'Source Sans Pro', Helvetica, sans-serif;
 
@@ -57,5 +58,10 @@ body {
 		border-radius: 100px;
 		background-color: $color1;
 		background: $color1;
+	}
+
+	.btn-div:hover {
+		cursor: pointer;
+		background: $color2;
 	}
 }
