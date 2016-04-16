@@ -64,20 +64,32 @@ joint.shapes.devs.Code = joint.shapes.basic.Generic.extend(_.extend({}, joint.sh
 }));
 
 //basic adjustments to be made to every codeblock
-function basicAdjustments(codeblock) {
-    codeblock.attr('[port="procIn"]/fill', 'black');
-    codeblock.attr('[port="procOut"]/fill', 'black');
-    return codeblock;
+
+function blueprintBasic(x, y, text, inPorts, outPorts) {
+    inPorts.push('procIn');
+    outPorts.push('procOut');
+    var out = new joint.shapes.devs.Code({
+        position: { x: x, y: y },
+        size: { width: 300, height: 50 },
+        inPorts: inPorts,
+        outPorts: outPorts,
+        attrs: {
+            '.label': { text: text, 'ref-x': .5, 'ref-y': .5 }
+        }
+    });
+    out.attr('[port="procIn"]/fill', 'black');
+    out.attr('[port="procOut"]/fill', 'black');
+    return out;
 }
 
 function blueprintVariable(x, y, name, value) {
-    return basicAdjustments(new joint.shapes.devs.Code({
-        position: { x: x, y: y },
-        size: { width: 300, height: 50 },
-        inPorts: ['procIn', 'assignment'],
-        outPorts: ['procOut', 'usage'],
-        attrs: {
-            '.label': { text: name, 'ref-x': .5, 'ref-y': .5 }
-        }
-    }));
+    return blueprintBasic(x, y, name, ['assignment'], ['value']);
+}
+
+function blueprintIf(x, y) {
+    return blueprintBasic(x, y, 'if', ['condition'], ['true', 'else']);
+}
+
+function blueprintWhile(x, y) {
+    return blueprintBasic(x, y, 'while', ['condition'], ['true']);
 }
