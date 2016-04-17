@@ -47,16 +47,16 @@ joint.shapes.devs.Code = joint.shapes.basic.Generic.extend(_.extend({}, joint.sh
         attrs[portLabelSelector] = { text: portName };
         attrs[portBodySelector] = { port: { id: portName || _.uniqueId(type) , type: type } };
         attrs[portSelector] = { ref: '.body', 'ref-y': (index + 0.5) * (1 / total) };
-        if (portName === 'procIn') { 
+        if (portName === 'procIn') {
             attrs[portSelector] = { ref: '.body', 'ref-y': 0, 'ref-x': 0.5};
             attrs[portLabelSelector] = { name: '' };
         }
 
-        if (selector === '.outPorts') { 
-            if (portName === 'procOut') { 
+        if (selector === '.outPorts') {
+            if (portName === 'procOut') {
                 attrs[portSelector] = { ref: '.body', 'ref-dy': 0, 'ref-x': 0.5 };
                 attrs[portLabelSelector] = { name: '' };
-            } else attrs[portSelector]['ref-dx'] = 0; 
+            } else attrs[portSelector]['ref-dx'] = 0;
         }
 
         return attrs;
@@ -104,7 +104,7 @@ function blueprintWhile(x, y) {
 }
 
 function blueprintFor(x, y) {
-    var out = blueprintBasic(x, y, 'for', ['collection'], ['each']);
+    var out = blueprintBasic(x, y, 'for', ['collection'], []);
     out.set({
         size: { width: 300, height: 90 }
     });

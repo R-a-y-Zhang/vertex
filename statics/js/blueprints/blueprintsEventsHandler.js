@@ -6,6 +6,7 @@ var menuStack = [];
 var ks = [];
 
 var mousePos = [0, 0];
+var mouseThen = [0,0];
 
 $(document).ready(function () {
 	// initializing variables
@@ -37,6 +38,16 @@ $(document).ready(function () {
 		if (ks[0] == 17 && ks[1] != undefined) {
 			switch(ks[1]) { // Ctrl
 				case 65: // A
+                    mouseThen[0] = mousePos[0] - $('#blueprint').offset().left;
+                    mouseThen[1] = mousePos[1] - $('#blueprint').offset().top;
+                    if (mouseThen[0] < 0 || mouseThen[0] > $('#blueprint').width()) {
+                        mouseThen[0] = 30;
+                        mouseThen[1] = 30;
+                    }
+                    if (mouseThen[1] < 0 || mouseThen[1] > $('#blueprint').width()) {
+                        mouseThen[1] = 30;
+                        mouseThen[1] = 30;
+                    }
 					openInsertNodeMenu();
 					break;
 				case 70: // F
@@ -56,6 +67,9 @@ $(document).ready(function () {
 			}
 		}
 	});
+    graph.on('all', function(eventName, cell) {
+        console.log(arguments);
+    });
 
 	$(document).click(function (e) {
 		$(this).attr('id');
