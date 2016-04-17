@@ -1,0 +1,36 @@
+$font-stack: 'Lato', Helvetica, sans-serif;
+$color1: #ADFF17;
+$color2: #5CFF17;
+$color3: #A7FF82;
+html, body {
+	font-family: $font-stack;
+	display: flex;
+	flex-flow: column;
+	width: 98%;
+	height: 98%;
+	background: $color1;
+}
+
+#content {
+	display: flex;
+	flex-flow: column;
+}
+
+#confirm-div {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 20px;
+	padding: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background: $color2;
+	margin-top: 50px;
+}
+
+#confirm-div:hover {
+	cursor: pointer;
+	background: $color3;
+}
