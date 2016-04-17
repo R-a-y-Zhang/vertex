@@ -1,9 +1,9 @@
 <html>
 	<head>
 		<script src='../../statics/js/dependencies/jquery.js'></script>
-		<script src='../../statics/js/blueprints/popup-controls/conditionPopupManager.js'></script>
 	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link href='../../statics/css/popup-styles/conditionalStyle.css' rel='stylesheet' type='text/css'>
+	<script src='../../statics/js/popup-controls/conditionPopupManager.js'></script>
 	</head>
 	<body>
 		<div id='header'>
@@ -13,6 +13,7 @@
 			<div id='conditional-selector'>
 				<p class='content-label'> Condition type </p>
 				<select id='condition-select'>
+					<option value='none'> None </option>
 					<option value='if'> If </option>
 					<option value='elif'> Elif </option>
 					<option value='for'> For </option>
