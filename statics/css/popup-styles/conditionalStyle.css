@@ -1,0 +1,30 @@
+html, body {
+  font-family: "Lato", Helvetica, sans-serif;
+  display: flex;
+  flex-flow: column;
+  width: 98%;
+  height: 98%;
+  background: #ADFF17; }
+
+#content {
+  display: flex;
+  flex-flow: column; }
+
+#confirm-div {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 20px;
+  padding: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background: #5CFF17;
+  margin-top: 50px; }
+
+#confirm-div:hover {
+  cursor: pointer;
+  background: #A7FF82; }
+
+/*# sourceMappingURL=conditionalStyle.css.map */

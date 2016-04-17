@@ -5,7 +5,8 @@ $(document).ready(function () {
 		var varName = $('#var-name').val();
 		var varInit = $('#var-init').val();
 		if (varInit == '') varInit = "None";
-		var data = varName + '|' + varInit;
+		var data = "variable|" + varName + '|' + varInit;
 		window.opener.postMessage(data, "*");
+		window.close();
 	});
 });
