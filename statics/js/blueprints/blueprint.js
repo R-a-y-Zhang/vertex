@@ -24,7 +24,7 @@ joint.shapes.devs.Code = joint.shapes.basic.Generic.extend(_.extend({}, joint.sh
             },
             '.inPorts circle': { fill: '#16A085', magnet: 'passive', type: 'input' },
             '.outPorts circle': { fill: '#E74C3C', type: 'output' },
-            rect: { fill: '#ffffff', rx: 0, ry: 0 },
+            rect: { fill: '#ffffff', width: 100, height: 30, rx: 20, ry: 20 },
             text: {
                 'pointer-events': 'none'
             },
@@ -65,12 +65,12 @@ joint.shapes.devs.Code = joint.shapes.basic.Generic.extend(_.extend({}, joint.sh
 
 //basic adjustments to be made to every codeblock
 
-function blueprintBasic(x, y, text, inPorts, outPorts) {
-    inPorts.push('procIn');
-    outPorts.push('procOut');
+function blueprintBasic(x, y, text, inPorts, outPorts, hasIn = true, hasOut = true) {
+    if (hasIn) inPorts.push('procIn');
+    if (hasOut) outPorts.push('procOut');
     var out = new joint.shapes.devs.Code({
         position: { x: x, y: y },
-        size: { width: 300, height: 50 },
+        size: { width: 100, height: 30 },
         inPorts: inPorts,
         outPorts: outPorts,
         attrs: {
@@ -94,11 +94,31 @@ function blueprintIf(x, y) {
 }
 
 function blueprintWhile(x, y) {
-    var out = blueprintBasic(x, y, 'while', ['condition'], ['true']);
-    out.attr('[port="true"]/fill', 'black');
-    return out;
+    var out = blueprintBasic(x, y, 'while', ['condition'], []);
+    out.set({
+        size: { width: 300, height: 90 }
+    });
+    var whileStart = blueprintBasic(x+100, y+10, 'start', [], [], false);
+    out.embed(whileStart);
+    return [out, whileStart];
 }
 
 function blueprintFor(x, y) {
-    return blueprintBasic(x, y, 'for', ['collection'], ['each']);
+    var out = blueprintBasic(x, y, 'for', ['collection'], ['each']);
+    out.set({
+        size: { width: 300, height: 90 }
+    });
+    var forVar = blueprintBasic(x+100, y+10, 'i', [], ['value'], false);
+    out.embed(forVar);
+    return [out, forVar];
+}
+
+function blueprintFunction(x, y, name, parameters, outputTypes) {
+    return blueprintBasic(x, y, name, parameters.map(function(param) {param.name}), outputTypes);
+}
+
+function blueprintReturn(x, y, parent) {
+    var out = blueprintBasic(x, y, 'return', ['value'], [], true, false);
+    parent.embed(out);
+    return out;
 }
