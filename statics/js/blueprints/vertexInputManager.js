@@ -3,27 +3,24 @@ var popups = require('./../statics/js/blueprints/vertexWindowsManager');
 $(document).ready (function () {
 	$(window).on('message', function (e) {
 	var data = e.originalEvent.data.split("|");
-        var model = graph.findModelsFromPoint( {x: mouseThen[0], y: mouseThen[1]} );
-        var out;
 		if (data[0] == 'variable') {
-			out = blueprintVariable(mouseThen[0], mouseThen[1], data[1], data[2]);
-			graph.addCell(out);
+			var varV = blueprintVariable(100, 100, data[1], data[2]);
+			graph.addCell(varV);
 		} else if (data[0] == 'loopCond') {
 			if (data[1] === 'if') {
 				console.log("IF");
-				out = blueprintIf(mouseThen[0], mouseThen[1]);
-				graph.addCell(out);
+				var ifV = blueprintIf(100, 100);
+				graph.addCell(ifV);
 			} else if (data[1] === 'while') {
-				out = blueprintWhile(mouseThen[0], mouseThen[1]);
-				graph.addCell(out);
+				var whileV = blueprintWhile(100, 100);
+				graph.addCell(whileV);
 			} else if (data[1] === 'for') {
-				out = blueprintFor(mouseThen[0], mouseThen[1]);
-				graph.addCell(out);
+				var forV = blueprintFor(100, 100);
+				graph.addCell(forV);
 			}
-		} else if (data[0] == 'loop') {
-
+		} else if (data[0] == 'function') {
+			console.log(data.toString());
 		}
-        if (model.length != 0) { model[0].embed(out) };
 	});
 
 	$('#blueprint').on('click', '.insertNodeMenu-item', function () {
@@ -40,6 +37,9 @@ $(document).ready (function () {
 			case 'function':
 				var fn_win = window.open(popups.fn);
 				break;
+
+			case 'numerics':
+				var num_win = window.open(popups.win);
 		}
 	});
 });
