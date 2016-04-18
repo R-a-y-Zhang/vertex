@@ -52,7 +52,7 @@ def makeCode(node, indent=0):
                 if (G.edge[node][i]["end"] == "parent"):
                     continue
                 for j in getFurthestRight(i):
-                    makeCode(j)
+                    makeCode(j,indent)
     else:
         return out
 
