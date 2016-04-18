@@ -1,0 +1,69 @@
+body, html {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  display: flex;
+  flex-flow: column;
+  width: 99%;
+  height: 99%;
+  justify-content: center; }
+
+body {
+  background: #F66613; }
+
+#add:hover {
+  cursor: pointer; }
+
+  #super{
+    padding:10px;
+    display:flex;
+    flex-flow:row;
+    
+
+  height:500;
+  width:390;
+  overflow-y:auto;
+  }
+
+  #paras2{
+
+  margin-left:10px;
+  }
+
+
+
+
+#header {
+  margin-left: 20px; }
+
+#content {
+  margin-right: auto;
+  margin-left: auto; }
+
+#fields {
+  display: flex;
+  flex-flow: row; }
+  #fields .fields-container {
+    margin: 10px; }
+  #fields input {
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    border: 1px solid grey;
+    border-radius: 200px;
+    padding: 5px;
+    padding-left: 10px;
+    width: 175px;
+    outline: 0; }
+
+#footer {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 10px; }
+  #footer p {
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #F69413;
+    border-radius: 100px;
+    background-color: #F69413;
+    background: #F69413; }
+  #footer .btn-div:hover {
+    cursor: pointer;
+    background: #ff9900; }

@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<link rel='stylesheet' type='text/css' href='../statics/css/main.css'>
+		<link rel='stylesheet' type='text/css' href='../statics/css/menus.css'>
+		<link href='https://fonts.googleapis.com/css?family=Arapey' rel='stylesheet' type='text/css'>
+
+		<!-- scripts -->
+		<!-- do not change the order of these scripts thnx -->
+		<!-- dependencies -->
+		<script src='../statics/js/dependencies/angular.js'></script>
+		<script src='../statics/js/dependencies/jquery.js'></script>
+
+		<!-- dependencies (blueprint) -->
+		<link rel='stylesheet' href='../statics/css/joint.min.css'>
+		<script src='../statics/js/dependencies/lodash.min.js'></script>
+		<script src='../statics/js/dependencies/backbone-min.js'></script>
+		<script src='../statics/js/dependencies/joint.min.js'></script>
+
+		<!-- blueprint controllers -->
+		<script src='../statics/js/blueprints/blueprintsEventsHandler.js'></script>
+		<script src='../statics/js/blueprints/blueprintsManager.js'></script>
+
+		<!-- blueprint vertex controllers -->
+		<script src='../statics/js/blueprints/vertexManager.js'></script>
+		<script src='../statics/js/blueprints/blueprint.js'></script>
+		<script src='../statics/js/blueprints/vertexInputManager.js'></script>
+		<script>
+			$(document).ready(function () {
+				var writeJSON = require('./../statics/js/helpers/BPfileio');
+				$('#run').click(function () {	
+					writeJSON.writeJSONOut(JSON.stringify(graph.toJSON()));
+
+						
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id='header'>
+			<div id='header-bar'>
+				<input type='image' src='../icons/wrench.png' class='icon' id='build' title='Build Project'>
+				<input type='image' src='../icons/play.png' class='icon' id='run' title='Run Project'>
+				<div class='header-bar-sep'></div>
+				<div class='header-btn'> <p class='header-btn-text'> fn </p></div>
+				<div class='header-btn'> <p class='header-btn-text'> cls </p></div>
+				<input type='image' src='../icons/loop.png' class='icon' id='loop' title='Insert Loop'>
+			</div>
+		</div>
+		<div id='main'>
+			<div id='tree'>
+				<div id='file-tree'>
+
+				</div>
+				<div class='tree-sep'></div>
+				<div id='file-ast'>
+
+				</div>
+			</div>
+			<div class='main-sep'></div>
+			<div id='blueprint' tabindex='1'>
+			</div>
+		</div>
+		<div id='footer'>
+
+		</div>
+	</body>
+</html>

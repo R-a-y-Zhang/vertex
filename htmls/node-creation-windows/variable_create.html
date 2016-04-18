@@ -1,0 +1,31 @@
+<html>
+	<head>
+
+		<link rel='stylesheet' type='text/css' href='../../statics/css/popup-styles/function.css'>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<script src='./../../statics/js/dependencies/jquery.js'></script>
+		<script src='./../../statics/js/blueprints/popup-controls/variablePopupManager.js'></script>
+
+	<body>
+		<div id='header'>
+			Create variable
+		</div>
+		<div id='content'>
+			<div id='fields'>
+				<div id='name' class='fields-container'>
+					<p class='label-text'> Name </p>
+					<input type='text' class='var-input' id='var-name' placeholder='(Required)' tabindex='1'>
+				</div>
+				<div id='initval' class='fields-container'>
+					<p class='label-text'> Initial value </p>
+					<input type='text' class='var-input' id='var-init' placeholder='None' tabindex='2'>
+				</div>
+			</div>
+		</div>
+		<div id='footer'>
+			<div class='btn-div'>
+				<p class='state-btn' id='confirm' tabindex='3'> Confirm </p>
+			</div>
+		</div>
+	</body>
+</html>

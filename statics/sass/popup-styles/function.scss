@@ -1,0 +1,70 @@
+$colorbg: #F66613;
+$color1: #F69413;
+$color2: #ff9900;
+
+$font-stack: 'Source Sans Pro', Helvetica, sans-serif;
+
+body, html {
+	font-family: $font-stack;
+	display: flex;
+	flex-flow: column;
+	width: 99%;
+	height: 99%;
+	justify-content: center;
+}
+
+body {
+	background: $colorbg;
+}
+#add:hover{
+	cursor:pointer;
+
+}
+#header {
+	margin-left: 20px;
+}
+
+#content {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#fields {
+	display: flex;
+	flex-flow: row;
+
+	.fields-container {
+		margin: 10px;
+	}
+
+	input {
+		font-family: $font-stack;
+		border: 1px solid grey;
+		border-radius: 200px;
+		padding: 5px;
+		padding-left: 10px;
+		width: 175px;
+		outline: 0;
+	}
+}
+
+#footer {
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: 10px;
+
+	p {
+		padding: 20px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		border: 1px solid $color1;
+		border-radius: 100px;
+		background-color: $color1;
+		background: $color1;
+	}
+
+	.btn-div:hover {
+		cursor: pointer;
+		background: $color2;
+	}
+}
