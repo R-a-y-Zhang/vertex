@@ -1,0 +1,17 @@
+{
+	"main": "htmls/main.html",
+	"name": "protoPy",
+	"window": {
+		"title": "protoPy",
+		"toolbar": true,
+		"width": 800,
+		"height": 600,
+		"min_width": 600,
+		"min_height": 400
+	},
+	"devDependencies": {
+		"grunt": "latest",
+		"grunt-contrib-sass": "latest",
+		"grunt-contrib-watch": "latest"
+	}
+}
